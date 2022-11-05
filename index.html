@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Formulario</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="code.js"></script>
+    <style>
+        html {
+            background: rgb(198,125,243);
+            background: linear-gradient(132deg, rgba(198,125,243,1) 1%, rgba(84,84,214,1) 72%, rgba(87,83,204,1) 78%, rgba(70,79,210,1) 95%);
+        }
+        main{
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            width: 70%;
+            margin: 0 auto;
+        }
+        #formulario{
+            margin-left: 5%;
+            margin-top: 50px;
+            max-width: 50%;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        .fila{
+            display: flex;
+            flex-direction: row;
+        }
+        .fila > label{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            margin-top: 10px;
+            
+        }
+        .fila > label > input{
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .fila-final{
+            display: flex;
+            flex-direction: row;
+        }
+        input[type="submit"]{
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #099ce7;
+            border: none;
+            border-radius: 2px;
+            color: white;
+            font-weight: bold;
+            margin-top: 50px;
+            max-width: 30%;
+            padding: 15px;
+        }
+        input[type="submit"]:hover{
+            background-color: #0a7db5;
+        }
+        a{
+            text-decoration: none;
+            color:#099ce7;
+            font-weight: bold;
+        }
+        img{
+            width: 485px;
+        }
+        header>p:first-of-type{
+            margin-right: 50px;
+        }
+        span{
+            margin-top:5px;
+            width: 180px;
+            margin-right: 15px;
+            background-color: rgb(241, 148, 148);
+            padding: 2px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="imagen.png" alt="imagen de empresa"></img>
+
+        <div id="formulario">
+            <header>
+                <h1>Welcome to Crowdrise</h1>
+                <p>Let's get you all set up so you can verify your nonprofit and begin setting up your first campaign</p>
+                <br>
+                <p>Already have an account? <a href="">Log in</a></p>
+            </header>
+            <form action="validador.php" method="post">
+                <div class="fila">
+                <label for="nombre">First Name
+                    <input type="text" name="nombre" id="nombre" required>
+                </label>
+                <label for="apellido">Last Name
+                    <input type="text" name="apellido" id="apellido" required>
+                </label>
+                </div>
+                <div class="fila">
+                    <label for="telefono">Phone
+                        <input type="tel" name="telefono" id="telefono" required>
+                    </label>
+                    <label for="email">Email
+                        <input type="email" name="email" id="email" required>
+                    </label>
+                </div>
+                <div class="fila aviso">
+                    <span id="tel">El campo debe tener formato de XXX-XX-XX-XX</span>
+                </div>
+                <div class="fila">
+                <label for="password">Password
+                    <input type="password" name="password" id="password" required>
+                </label>
+                <label for="confirmation">Confirm Password
+                    <input type="password" name="confirmation" id="confirmation" required>
+                </label>
+            </div>
+            <div class="fila aviso">
+                <span id="=pas">La contraseña debe tener al menos 1 minuscula, 1 mayusculay, 1 digito y al menos 6 caracteres</span>
+                <span id="pasconf">Contraseña no coincidente</span>
+            </div>
+                <br>
+                <div class="fila-final">
+                <input type="checkbox" name="spam" id="spam">
+                <label for="spam">I want to receive Crowdrise's emails</label>
+                </div>
+                <div class="fila-final">
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">I agree to the <a href="">Terms Privacy Policy</a> and <a href="">Fees</a></label>
+                </div>
+                <input type="submit" value="Sign Up" id="enviar">
+                <p>Don't work for a nonprofit? <a href="">You can still fundraise for one</a></p>
+            </form>
+            
+        </div>
+    </main>
+</body>
+</html>
